@@ -6,7 +6,7 @@
 	else {
 		$count = $_COOKIE["pageView"] + 1;
 	}
-	setcookie("pageView", $count, time() + 1000);
+	setcookie("pageView", $count, time() + 1);
  ?>
 <!DOCTYPE html>
 
