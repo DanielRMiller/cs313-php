@@ -1,5 +1,12 @@
 <?php 
-	setcookie("userId", "sburton", time() + 1000);
+	$count = 0;
+	if (!$_COOKIE["pageView"]) {
+		$count = 1;
+	}
+	else {
+		$count = $_COOKIE["pageView"] + 1;
+	}
+	setcookie("pageView", $count, time() + 1000);
  ?>
 <!DOCTYPE html>
 
