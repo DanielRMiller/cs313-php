@@ -14,8 +14,6 @@
 	<head></head>
 	<body>
 		<h1>Fun with cookies!</h1>
-		<?php 
-
-		 ?>
+		<p>View Count: <?php echo $count ?></p>
 	</body>
 </html>
