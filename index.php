@@ -6,14 +6,15 @@
 		<link rel="stylesheet" type="text/css" href="external.css" />
 	</head>
 	<body>
-		<h1 id="top" class="title">CS 313 Assignments</h1>
+		<header id="top"><h1 class="title">CS 313 Assignments</h1></header>
+		
 		<table id="main">
 			<tr>
 				<td>
 					<ul>
 						<?php 
 							for ($x = 1; $x <= 9; $x++) {
-								echo "<li><a href=\"assign0{$x}.html\">Assignment {$x}</a></li>";
+								echo "<li><a href=\"assign{$x}.html\">Assignment {$x}</a></li>";
 							} 
 						?>
 					</ul>
