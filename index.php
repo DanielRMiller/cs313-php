@@ -3,6 +3,7 @@
 	<head>
 		<meta charset = "utf-8" />
 		<title>Daniel Miller's Assignments</title>
+		<link rel="stylesheet" type="text/css" href="external.css" />
 	</head>
 	<body>
 		<h1 class="title">CS 313 Assignments</h1>
