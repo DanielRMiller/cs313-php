@@ -6,8 +6,8 @@
 		<link rel="stylesheet" type="text/css" href="external.css" />
 	</head>
 	<body>
-		<h1 class="title">CS 313 Assignments</h1>
-		<table>
+		<h1 id="top" class="title">CS 313 Assignments</h1>
+		<table id="main">
 			<tr>
 				<td>
 					<ul>
