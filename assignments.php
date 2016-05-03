@@ -20,6 +20,24 @@
         <h2>Coming Soon</h2>
       </div>
     </div>
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-md-4 border darken">
+            <h4>Email: d.miller1.work@gmail.com</h4>
+          </div>
+          <div class="col-md-4 border darken">
+            <h4>Phone: 402.659.0008</h4>
+          </div>
+          <div class="col-md-2">
+            <a class="btn btn-primary" role="button" href="https://www.linkedin.com/in/daniel-miller-10b6b83a">Linkedin</a>
+          </div>
+          <div class="con-md-2">
+            <a href="index.php" class="btn btn-primary" role="button">Profile</a>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
   <footer class="copyright">Copyright &#169; 2016 Daniel Miller</footer>
 </body>
