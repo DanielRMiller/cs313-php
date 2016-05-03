@@ -63,13 +63,6 @@
             <!-- Wrapper for slides -->
             <div class="carousel-inner" role="listbox">
               <!-- TODO: Get pictures that are the same dimensions -->
-              <div class="item active">
-                <img src="./assets/engagement.jpg" alt="Engagement Pic">
-                <div class="carousel-caption">
-                  <h3 class="black-text">Engagement Picture</h3>
-                  <p class="black-text">We got engaged here in Rexburg.</p>
-                </div>
-              </div>
 
               <div class="item">
                 <img src="./assets/wedding.jpg" alt="Wedding Pic">
@@ -84,14 +77,6 @@
                 <div class="carousel-caption">
                   <h3 class="black-text">Honeymoon Picture</h3>
                   <p class="black-text">We had our honeymoon in Washington State.</p>
-                </div>
-              </div>
-              
-              <div class="item">
-                <img src="./assets/father.jpg" alt="Father Pic">
-                <div class="carousel-caption">
-                  <h3 class="black-text">Father Picture</h3>
-                  <p class="black-text">Our little Amelia was born on October 16th, 2014.</p>
                 </div>
               </div>
 
