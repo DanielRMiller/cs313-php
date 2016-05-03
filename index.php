@@ -18,9 +18,8 @@
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 
-
-    <!-- Custom styles for this template -->
-    <link href="jumbotron.less" rel="stylesheet">
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="style.css">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -114,8 +113,11 @@
                 <div class="col-md-4 border darken">
                   <h4>Phone: 402.659.0008</h4>
                 </div>
-                <div class="col-md-4">
-                  <a class="bigger-text" href="https://www.linkedin.com/in/daniel-miller-10b6b83a">Linkedin</a>
+                <div class="col-md-2">
+                  <a class="btn btn-primary" role="button" href="https://www.linkedin.com/in/daniel-miller-10b6b83a">Linkedin</a>
+                </div>
+                <div class="con-md-2">
+                  <a href="assignments.php" class="btn btn-primary" role="button">Assignments</a>
                 </div>
               </div>
             </div>
