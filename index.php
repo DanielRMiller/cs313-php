@@ -57,14 +57,13 @@
               <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
               <li data-target="#myCarousel" data-slide-to="1"></li>
               <li data-target="#myCarousel" data-slide-to="2"></li>
-              <li data-target="#myCarousel" data-slide-to="3"></li>
             </ol>
 
             <!-- Wrapper for slides -->
             <div class="carousel-inner" role="listbox">
               <!-- TODO: Get pictures that are the same dimensions -->
 
-              <div class="item">
+              <div class="item active">
                 <img src="./assets/wedding.jpg" alt="Wedding Pic">
                 <div class="carousel-caption">
                   <h3 class="black-text">Wedding Picture</h3>
