@@ -17,7 +17,7 @@
     </div>
     <div class="panel panel-default">
       <div class="panel-body">
-        <h2>Coming Soon</h2>
+        <a class="btn btn-primary" role="button" href="survey.php">Survey</a>
       </div>
     </div>
     <div class="panel panel-default">
