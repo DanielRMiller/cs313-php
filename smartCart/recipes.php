@@ -46,13 +46,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Smart Cart - Recipes</title>
-    <a href="mealPlan.php">Meal Plan</a>
+    <a href="menu.php">Menu</a>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css">
   </head>
   <body>
-    <h1 class="text-xs-center">Recipes</h1>
+    <h1 class="text-xs-center"><?=$_SESSION['first_name']?>'s Recipes</h1>
     <table>
     <?php 
       foreach ($recipes as $recipe) {
