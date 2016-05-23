@@ -1,16 +1,32 @@
 <?php
   session_start();
-  if (!$_SESSION['username']) {
-    header("Location: index.php");
-  }
-  try
-  {
-    $db = new PDO('mysql:host=localhost;dbname=smartcart;charset=utf8mb4', 'smartCartApp', 'abc123');
-  }
-  catch (PDOException $ex) 
-  {
-    echo 'Error!: ' . $ex->getMessage();
-    die(); 
+  // See if we are on openshift or localhost
+  $dbHost = "";
+  $dbPort = "";
+  $dbUser = "";
+  $dbPassword = "";
+  $dbName = "smartcart";
+  $openShiftVar = getenv('OPENSHIFT_MYSQL_DB_HOST');
+  // Now check where we are running this
+  if ($openShiftVar === null || $openShiftVar == "") {
+    // We are in the local host
+    $dbHost = 'localhost';
+    $dbPort = '';
+    $dbUser = 'smartCartApp';
+    $dbPassword = 'abc123';
+  } else {
+    // We are on the openshift database!
+    $dbHost = getenv('OPENSHIFT_MYSQL_DB_HOST');
+    $dbPort = ":" . getenv('OPENSHIFT_MYSQL_DB_PORT');
+    $dbUser = getenv('OPENSHIFT_MYSQL_DB_USERNAME');
+    $dbPassword = getenv('OPENSHIFT_MYSQL_DB_PASSWORD');
+    }
+  try {
+    // Connect to the database!
+    $db = new PDO("mysql:host=$dbHost$dbPort;dbname=$dbName", $dbUser, $dbPassword);
+  } catch (PDOException $e) {
+    echo "ERROR in connecting to database: " . $e->getMessage();
+    die();
   }
   $stmt = $db->prepare("
     SELECT r.name, r.description 
@@ -30,14 +46,14 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Smart Cart - Recipes</title>
-    <a href="mealPlan.php">Meal Plan</a>
+    <title>Smart Cart - Menu</title>
+    <a href="recipes.php">Recipes</a>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css">
   </head>
   <body>
-    <h1 class="text-xs-center">Recipes</h1>
+    <h1 class="text-xs-center">Menu</h1>
     <table>
     <?php 
       foreach ($recipes as $recipe) {
