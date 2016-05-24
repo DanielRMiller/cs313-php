@@ -29,7 +29,7 @@
     die();
   }
   $stmt = $db->prepare("
-    SELECT r.name, r.description 
+    SELECT r.name, r.description, ur.selected
       FROM user as u 
         JOIN user_recipe AS ur ON ur.user_id=u.id
         JOIN recipe AS r ON r.id=ur.recipe_id
@@ -47,6 +47,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Smart Cart - Recipes</title>
     <a href="menu.php">Menu</a>
+    <a href="cart.php">Cart</a>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css">
@@ -54,11 +55,21 @@
   <body>
     <h1 class="text-xs-center"><?=$_SESSION['first_name']?>'s Recipes</h1>
     <table>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Add/Remove</th>
+      </tr>
     <?php 
       foreach ($recipes as $recipe) {
         echo '<tr>';
         echo '<td>' . $recipe['name'] . '</td>';
         echo '<td>' . $recipe['description'] . '</td>';
+        $checked = '';
+        if ($recipe['selected'] == 1) {
+          $checked = 'checked';
+        }
+        echo '<td><input type="checkbox" name="checkbox" ' . $checked . '></td>';
         echo '</tr>';
       }
     ?>

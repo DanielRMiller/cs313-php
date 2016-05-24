@@ -29,14 +29,17 @@
     die();
   }
   $stmt = $db->prepare("
-    SELECT r.name, r.description 
+    SELECT ri.amount, ri.measurement_type, i.name
       FROM user as u 
         JOIN user_recipe AS ur ON ur.user_id=u.id
         JOIN recipe AS r ON r.id=ur.recipe_id
+        JOIN recipe_ingredient AS ri ON ri.recipe_id=r.id
+        JOIN ingredient AS i ON i.id=ri.ingredient_id
       WHERE u.username=:username 
-        AND ur.selected!=0;");
+        AND ur.selected!=0;
+  ");
   $stmt->execute(array(':username' => $_SESSION['username']));
-  $recipes = $stmt->fetchAll(PDO::FETCH_ASSOC);
+  $ingredients = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <!DOCTYPE html>
@@ -46,21 +49,22 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Smart Cart - Menu</title>
+    <title>Smart Cart - Cart</title>
     <a href="recipes.php">Recipes</a>
-    <a href="cart.php">Cart</a>
+    <a href="menu.php">Menu</a>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css">
   </head>
   <body>
-    <h1 class="text-xs-center">Menu</h1>
+    <h1 class="text-xs-center">Cart</h1>
     <table>
     <?php 
-      foreach ($recipes as $recipe) {
+      foreach ($ingredients as $ingredient) {
         echo '<tr>';
-        echo '<td>' . $recipe['name'] . '</td>';
-        echo '<td>' . $recipe['description'] . '</td>';
+        echo '<td>' . $ingredient['amount'] . '</td>';
+        echo '<td>' . $ingredient['measurement_type'] . '</td>';
+        echo '<td>' . $ingredient['name'] . '</td>';
         echo '</tr>';
       }
     ?>
