@@ -18,8 +18,8 @@
         $dbPassword = getenv('OPENSHIFT_MYSQL_DB_PASSWORD');
     }
     try {
-    // Connect to the database!
-    $db = new PDO("mysql:host=$dbHost$dbPort;dbname=$dbName", $dbUser, $dbPassword);
+        // Connect to the database!
+        $db = new PDO("mysql:host=$dbHost$dbPort;dbname=$dbName", $dbUser, $dbPassword);
     } catch (PDOException $e) {
         echo "ERROR in connecting to database: " . $e->getMessage();
         die();
