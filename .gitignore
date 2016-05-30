@@ -4,3 +4,5 @@ node_modules*
 
 # ignore bower components
 bower_components*
+dbResponses.txt
+dbCredentials.php
