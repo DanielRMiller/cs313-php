@@ -6,3 +6,4 @@ node_modules*
 bower_components*
 dbResponses.txt
 dbCredentials.php
+dbInput.txt
