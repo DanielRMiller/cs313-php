@@ -50,26 +50,26 @@
       <form action="recipeFormHandler.php" method="post">
         <fieldset class="form-group">
           <label for="recipeName">Recipe Name</label>
-          <input value="Recipe Name" type="text" class="form-control" name="recipeName" id="recipeName" placeholder="Recipe Name">
+          <input type="text" class="form-control" name="recipeName" id="recipeName" placeholder="Recipe Name">
         </fieldset>
         <fieldset class="form-group">
           <label for="recipeName">Recipe Description</label>
-          <input value="Recipe Description" type="text" class="form-control" name="recipeDescription" id="recipeDescription" placeholder="Recipe Description">
+          <input type="text" class="form-control" name="recipeDescription" id="recipeDescription" placeholder="Recipe Description">
         </fieldset>
         <fieldset class="form-group row ingredients">
           <div class="controlDiv">
             <div class="ingredient">
               <div class="col-sm-4">
                 <label for="IngredientName">Ingredient Name</label>
-                <input value="Ingredient Name" type="text" class="form-control" name="ingredientName[]" id="ingredientName" placeholder="Ingredient Name">
+                <input type="text" class="form-control" name="ingredientName[]" id="ingredientName" placeholder="Ingredient Name">
               </div>
               <div class="col-sm-3">
                 <label for="recipeName">Ingredient Amount</label>
-                <input value="3" type="number" class="form-control" name="ingredientAmount[]" id="ingredientAmount" placeholder="Recipe Amount">
+                <input type="number" class="form-control" name="ingredientAmount[]" id="ingredientAmount" placeholder="Recipe Amount">
               </div>
               <div class="col-sm-4">
                 <label for="recipeName">Ingredient Measurement Type</label>
-                <input value="Ingredient Measurement Type Type" type="text" class="form-control" name="ingredientMeasurementType[]" id="ingredientMeasurementType" placeholder="Recipe Description">
+                <input type="text" class="form-control" name="ingredientMeasurementType[]" id="ingredientMeasurementType" placeholder="Recipe Description">
               </div>
               <div class="col-sm-1">
                 <button class="btn btn-success btn-add" type="button">
