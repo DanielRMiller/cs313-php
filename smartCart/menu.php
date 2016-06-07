@@ -20,15 +20,40 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Smart Cart - Menu</title>
-    <a href="recipes.php">Recipes</a>
-    <a href="cart.php">Cart</a>
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css">
+
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="../style.css">
   </head>
   <body>
+    <nav class="navbar navbar-inverse navbar-static-top">
+      <a class="navbar-brand" href="cart.php">Smart Cart</a>
+      <ul class="nav nav-pills">
+        <li class="nav-item">
+          <a class="nav-link" href="recipes.php">Recipes</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="menu.php">Menu</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="cart.php">Cart</a>
+        </li>
+      </ul>
+    </nav>
     <h1 class="text-xs-center">Menu</h1>
-    <table>
+    <table class="table table-hover">
     <?php 
       foreach ($recipes as $recipe) {
         echo '<tr>';
@@ -38,11 +63,7 @@
       }
     ?>
     </table>
-    <!-- jQuery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <!-- Include Tether -->
-    <script src="https://www.atlasestateagents.co.uk/javascript/tether.min.js"></script>
-    <!-- Bootstrap JavaScript -->
-    <script src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script>
+    <button class="btn btn-secondary" onclick="location.href='recipes.php'">Back</button>
+    <button class="btn btn-primary" onclick="location.href='cart.php'">To Cart</button>
   </body>
 </html>

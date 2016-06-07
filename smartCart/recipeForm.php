@@ -61,7 +61,7 @@
             <div class="ingredient">
               <div class="col-sm-4">
                 <label for="IngredientName">Ingredient Name</label>
-                <input type="text" class="form-control" name="ingredientName[]" id="ingredientName" placeholder="Ingredient Name">
+                <input type="text" class="form-control" name="ingredientName[]" id="ingredientName" placeholder="Ingredient Name" required="required">
               </div>
               <div class="col-sm-3">
                 <label for="recipeName">Ingredient Amount</label>
@@ -85,27 +85,24 @@
   </body>
   <script>
     $(function()
-{
-    $(document).on('click', '.btn-add', function(e)
     {
+      $(document).on('click', '.btn-add', function(e)
+      {
         e.preventDefault();
-
         var controlForm = $('.ingredients .controlDiv:first'),
-            currentEntry = $(this).parents('.ingredient:first'),
-            newEntry = $(currentEntry.clone()).appendTo(controlForm);
-
+          currentEntry = $(this).parents('.ingredient:first'),
+          newEntry = $(currentEntry.clone()).appendTo(controlForm);
         newEntry.find('input').val('');
         controlForm.find('.ingredient:not(:last) .btn-add')
-            .removeClass('btn-add').addClass('btn-remove')
-            .removeClass('btn-success').addClass('btn-danger')
-            .html('<span class="glyphicon glyphicon-minus"></span>');
-    }).on('click', '.btn-remove', function(e)
-    {
-    $(this).parents('.ingredient:first').remove();
-
-    e.preventDefault();
-    return false;
-  });
-});
+          .removeClass('btn-add').addClass('btn-remove')
+          .removeClass('btn-success').addClass('btn-danger')
+          .html('<span class="glyphicon glyphicon-minus"></span>');
+      }).on('click', '.btn-remove', function(e)
+      {
+        $(this).parents('.ingredient:first').remove();
+        e.preventDefault();
+        return false;
+      });
+    });
   </script>
 </html>
