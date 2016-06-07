@@ -65,7 +65,7 @@
               </div>
               <div class="col-sm-3">
                 <label for="recipeName">Ingredient Amount</label>
-                <input type="number" class="form-control" name="ingredientAmount[]" id="ingredientAmount" placeholder="Recipe Amount">
+                <input type="number" step="any" class="form-control" name="ingredientAmount[]" id="ingredientAmount" placeholder="Recipe Amount">
               </div>
               <div class="col-sm-4">
                 <label for="recipeName">Ingredient Measurement Type</label>
