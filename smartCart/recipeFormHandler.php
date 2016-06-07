@@ -32,6 +32,11 @@
     $stmt->execute(array(':rid' => $rid, ':uid' => (int)$_SESSION['id'] ));
     // For each of the ingredients they provided
     foreach ($_POST['ingredientName'] as $key => $name) {
+      $measurement_type = $_POST['ingredientMeasurementType'][$key];
+      $ingredient_amount = $_POST['ingredientAmount'][$key];
+      if ($name and $measurement_type and $ingredient_amount) {
+        continue;
+      }
       // Get the Ingredient ID if it exists
       $stmt = $db->prepare("
         SELECT id 
@@ -68,8 +73,8 @@
         ");
       $stmt->execute(array(
           ':iid' => $iid,
-          ':measurement' => $_POST['ingredientMeasurementType'][$key],
-          ':amount' => $_POST['ingredientAmount'][$key],
+          ':measurement' => $measurement_type,
+          ':amount' => $ingredient_amount,
           ':rid' => $rid));
     }
     header("Location: recipes.php");
