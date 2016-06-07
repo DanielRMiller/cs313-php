@@ -21,3 +21,6 @@ color: black;
 a.btn {
 	margin: .1em;
 }
+tr:hover{
+	color: darkred;
+}
