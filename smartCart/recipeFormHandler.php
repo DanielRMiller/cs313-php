@@ -34,7 +34,7 @@
     foreach ($_POST['ingredientName'] as $key => $name) {
       $measurement_type = $_POST['ingredientMeasurementType'][$key];
       $ingredient_amount = $_POST['ingredientAmount'][$key];
-      if ($name and $measurement_type and $ingredient_amount) {
+      if (!$name) {
         continue;
       }
       // Get the Ingredient ID if it exists
